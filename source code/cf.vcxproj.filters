@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{bdb0edd7-bbb3-483b-a521-aed248344555}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\json">
+      <UniqueIdentifier>{86b47897-b5d3-4e46-a920-1c60294d9861}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\server">
+      <UniqueIdentifier>{f16831f3-69cc-42c3-8d14-ed23d05f1d7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Proton">
+      <UniqueIdentifier>{1809a1d7-7f70-40d6-bbfa-8504599b09e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils">
+      <UniqueIdentifier>{634c08f5-f2d4-48c1-9e80-deed96dc86f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils\Math">
+      <UniqueIdentifier>{49fb0fb2-d411-4c0a-8010-a36af43c31b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Constants">
+      <UniqueIdentifier>{0c8a48bd-3fd5-4c9b-9965-51a90848d0f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NetAvatar">
+      <UniqueIdentifier>{7dd8a078-b4d8-48af-b398-102e7fd88b2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\NetAvatar\logon">
+      <UniqueIdentifier>{19b1fbc1-13c8-48cf-9632-61627396939c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils\Binary">
+      <UniqueIdentifier>{1630e158-fd92-4d58-a1b5-24a21eb722e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils\Text">
+      <UniqueIdentifier>{737ad33a-754d-4551-86e4-262cc812e89d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils\Packet">
+      <UniqueIdentifier>{d3a0d7ea-ed2c-4ffe-9b89-ebcf564ad90b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Proton\Text">
+      <UniqueIdentifier>{54b82e23-6f44-4e55-8edf-8b55cbeb1cc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{c62c7c0f-5478-4fc1-aed2-7451794ec5cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Text">
+      <UniqueIdentifier>{91bc11a8-987d-43b9-9770-25625196eafc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Tank">
+      <UniqueIdentifier>{947f7b76-9443-4f8c-94a2-a8795dbdf179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events\Action">
+      <UniqueIdentifier>{bd5b365d-064f-49c7-9b9e-82d67d30dfe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Database">
+      <UniqueIdentifier>{c48b3263-3c46-40f5-9757-a3b7a50f0f77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Database\ItemDB">
+      <UniqueIdentifier>{c1b32b90-5e3d-4318-b8c2-4b236978fc93}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="json.hpp">
+      <Filter>Modules\json</Filter>
+    </ClInclude>
+    <ClInclude Include="server\server.h++">
+      <Filter>Source Files\server</Filter>
+    </ClInclude>
+    <ClInclude Include="proton\variant.h++">
+      <Filter>Source Files\Proton</Filter>
+    </ClInclude>
+    <ClInclude Include="proton\packet.h++">
+      <Filter>Source Files\Proton</Filter>
+    </ClInclude>
+    <ClInclude Include="constants\constants.h++">
+      <Filter>Source Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="constants\roles_manager.h++">
+      <Filter>Source Files\Constants</Filter>
+    </ClInclude>
+    <ClInclude Include="NetAvatar\NetAvatar.h++">
+      <Filter>Source Files\NetAvatar</Filter>
+    </ClInclude>
+    <ClInclude Include="NetAvatar\logon\logon.h++">
+      <Filter>Source Files\NetAvatar\logon</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\binary\reader.h++">
+      <Filter>Source Files\Utils\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\binary\writer.h++">
+      <Filter>Source Files\Utils\Binary</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\text\text.h++">
+      <Filter>Source Files\Utils\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\packet\update_packet.h++">
+      <Filter>Source Files\Utils\Packet</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\math\common.h++">
+      <Filter>Source Files\Utils\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="proton\text\text_scanner.h++">
+      <Filter>Source Files\Proton\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="events\events.h++">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="server\pool.h++">
+      <Filter>Source Files\server</Filter>
+    </ClInclude>
+    <ClInclude Include="events\text\text_events.h++">
+      <Filter>Source Files\Events\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="database\itemdb\items_info.h++">
+      <Filter>Source Files\Database\ItemDB</Filter>
+    </ClInclude>
+    <ClInclude Include="database\itemdb\items_list.h++">
+      <Filter>Source Files\Database\ItemDB</Filter>
+    </ClInclude>
+    <ClInclude Include="database\itemdb\itemdb.h++">
+      <Filter>Source Files\Database\ItemDB</Filter>
+    </ClInclude>
+    <ClInclude Include="events\action\actions.h++">
+      <Filter>Source Files\Events\Action</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c++">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="server\server.c++">
+      <Filter>Source Files\server</Filter>
+    </ClCompile>
+    <ClCompile Include="NetAvatar\NetAvatar.c++">
+      <Filter>Source Files\NetAvatar</Filter>
+    </ClCompile>
+    <ClCompile Include="events\events.c++">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="events\text\text_events.c++">
+      <Filter>Source Files\Events\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="database\itemdb\itemdb.c++">
+      <Filter>Source Files\Database\ItemDB</Filter>
+    </ClCompile>
+    <ClCompile Include="events\action\actions.c++">
+      <Filter>Source Files\Events\Action</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
