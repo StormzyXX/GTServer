@@ -4,7 +4,7 @@
 #include <enet/include/enet.h>
 #include <memory>
 #include <string>
-#include <proton/packet.h++>
+#include <proton/packet.hpp>
 
 namespace svr::packet {
     std::string get_tank_packet(ENetPacket* pck) { //basically growtopia noobs's messageType but simple

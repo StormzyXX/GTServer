@@ -1,6 +1,6 @@
-#include <NetAvatar/NetAvatar.h++>
-#include <constants/constants.h++>
-#include <database/itemdb/itemdb.h++>
+#include <NetAvatar/NetAvatar.hpp>
+#include <constants/constants.hpp>
+#include <database/itemdb/itemdb.hpp>
 
 namespace svr {
 	uint32_t NetAvatar_t::get_user_id() const {

@@ -8,7 +8,7 @@
 
 #include <enet/include/enet.h>
 #include <fmt/include/core.h>
-#include <events/events.h++>
+#include <events/events.hpp>
 
 namespace svr
 {

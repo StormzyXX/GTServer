@@ -14,18 +14,18 @@
 
 //server struct
 //players:
-#include <NetAvatar/NetAvatar.h++>
+#include <NetAvatar/NetAvatar.hpp>
 
 //events:
-#include <events/events.h++>
-#include <events/text/text_events.h++>
+#include <events/events.hpp>
+#include <events/text/text_events.hpp>
 
 //server:
-#include <server/server.h++>
-#include <server/pool.h++>
+#include <server/server.hpp>
+#include <server/pool.hpp>
 
 //items:
-#include <database/itemdb/itemdb.h++>
+#include <database/itemdb/itemdb.hpp>
 
 using namespace svr;
 pool* g_servers;

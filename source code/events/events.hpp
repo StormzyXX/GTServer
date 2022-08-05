@@ -3,9 +3,9 @@
 
 #include <functional>
 #include <unordered_map>
-#include <NetAvatar/NetAvatar.h++>
-#include <server/server.h++>
-#include <proton/packet.h++>
+#include <NetAvatar/NetAvatar.hpp>
+#include <server/server.hpp>
+#include <proton/packet.hpp>
 
 namespace svr {
     class ENetServer;

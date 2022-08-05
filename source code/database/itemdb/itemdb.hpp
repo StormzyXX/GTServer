@@ -4,8 +4,8 @@
 #include <vector>
 #include <filesystem>
 
-#include <database/itemdb/items_info.h++>
-#include <proton/packet.h++>
+#include <database/itemdb/items_info.hpp>
+#include <proton/packet.hpp>
 
 namespace svr
 {
@@ -25,16 +25,13 @@ namespace svr
         ~item_database();
 
         bool interface__init();
-
-        GameTextPacket* interface__get_packet();
-        uint32_t interface__get_packet_size() const;
     private:
-        uint32_t m_hash;
-        char* m_data;
-        size_t m_data_size;
+        uint32_t m_hash = 0;
+        char* m_data = 0;
+        size_t m_data_size = 0;
 
-        uint32_t m_item_count;
-        uint16_t m_version;
+        uint32_t m_item_count = 0;
+        uint16_t m_version = 14;
 
         TankUpdatePacket* m_packet;
     private:

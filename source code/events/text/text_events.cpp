@@ -1,6 +1,6 @@
-#include <events/text/text_events.h++>
-#include <proton/variant.h++>
-#include <proton/text/text_scanner.h++>
+#include <events/text/text_events.hpp>
+#include <proton/variant.hpp>
+#include <proton/text/text_scanner.hpp>
 
 namespace svr {
     void requested_name(events::content& content) {

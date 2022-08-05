@@ -1,6 +1,6 @@
 #ifndef _TEXT_EVENTS_
 #define _TEXT_EVENTS_
-#include <events/events.h++>
+#include <events/events.hpp>
 
 namespace svr {
     void requested_name(events::content& content);

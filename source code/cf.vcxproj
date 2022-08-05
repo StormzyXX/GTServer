@@ -19,36 +19,36 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="constants\constants.h++" />
-    <ClInclude Include="constants\roles_manager.h++" />
-    <ClInclude Include="database\itemdb\itemdb.h++" />
-    <ClInclude Include="database\itemdb\items_info.h++" />
-    <ClInclude Include="database\itemdb\items_list.h++" />
-    <ClInclude Include="events\action\actions.h++" />
-    <ClInclude Include="events\events.h++" />
-    <ClInclude Include="events\text\text_events.h++" />
+    <ClInclude Include="constants\constants.hpp" />
+    <ClInclude Include="constants\roles_manager.hpp" />
+    <ClInclude Include="database\itemdb\itemdb.hpp" />
+    <ClInclude Include="database\itemdb\items_info.hpp" />
+    <ClInclude Include="database\itemdb\items_list.hpp" />
+    <ClInclude Include="events\action\actions.hpp" />
+    <ClInclude Include="events\events.hpp" />
+    <ClInclude Include="events\text\text_events.hpp" />
     <ClInclude Include="json.hpp" />
-    <ClInclude Include="NetAvatar\logon\logon.h++" />
-    <ClInclude Include="NetAvatar\NetAvatar.h++" />
-    <ClInclude Include="proton\packet.h++" />
-    <ClInclude Include="proton\text\text_scanner.h++" />
-    <ClInclude Include="proton\variant.h++" />
-    <ClInclude Include="server\pool.h++" />
-    <ClInclude Include="server\server.h++" />
-    <ClInclude Include="utils\binary\reader.h++" />
-    <ClInclude Include="utils\binary\writer.h++" />
-    <ClInclude Include="utils\math\common.h++" />
-    <ClInclude Include="utils\packet\update_packet.h++" />
-    <ClInclude Include="utils\text\text.h++" />
+    <ClInclude Include="NetAvatar\logon\logon.hpp" />
+    <ClInclude Include="NetAvatar\NetAvatar.hpp" />
+    <ClInclude Include="proton\packet.hpp" />
+    <ClInclude Include="proton\text\text_scanner.hpp" />
+    <ClInclude Include="proton\variant.hpp" />
+    <ClInclude Include="server\pool.hpp" />
+    <ClInclude Include="server\server.hpp" />
+    <ClInclude Include="utils\binary\reader.hpp" />
+    <ClInclude Include="utils\binary\writer.hpp" />
+    <ClInclude Include="utils\math\common.hpp" />
+    <ClInclude Include="utils\packet\update_packet.hpp" />
+    <ClInclude Include="utils\text\text.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="database\itemdb\itemdb.c++" />
-    <ClCompile Include="events\action\actions.c++" />
-    <ClCompile Include="events\events.c++" />
-    <ClCompile Include="events\text\text_events.c++" />
-    <ClCompile Include="main.c++" />
-    <ClCompile Include="NetAvatar\NetAvatar.c++" />
-    <ClCompile Include="server\server.c++" />
+    <ClCompile Include="database\itemdb\itemdb.cpp" />
+    <ClCompile Include="events\action\actions.cpp" />
+    <ClCompile Include="events\events.cpp" />
+    <ClCompile Include="events\text\text_events.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="NetAvatar\NetAvatar.cpp" />
+    <ClCompile Include="server\server.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

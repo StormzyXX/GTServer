@@ -67,87 +67,87 @@
     <ClInclude Include="json.hpp">
       <Filter>Modules\json</Filter>
     </ClInclude>
-    <ClInclude Include="server\server.h++">
+    <ClInclude Include="server\server.hpp">
       <Filter>Source Files\server</Filter>
     </ClInclude>
-    <ClInclude Include="proton\variant.h++">
+    <ClInclude Include="proton\variant.hpp">
       <Filter>Source Files\Proton</Filter>
     </ClInclude>
-    <ClInclude Include="proton\packet.h++">
+    <ClInclude Include="proton\packet.hpp">
       <Filter>Source Files\Proton</Filter>
     </ClInclude>
-    <ClInclude Include="constants\constants.h++">
+    <ClInclude Include="constants\constants.hpp">
       <Filter>Source Files\Constants</Filter>
     </ClInclude>
-    <ClInclude Include="constants\roles_manager.h++">
+    <ClInclude Include="constants\roles_manager.hpp">
       <Filter>Source Files\Constants</Filter>
     </ClInclude>
-    <ClInclude Include="NetAvatar\NetAvatar.h++">
+    <ClInclude Include="NetAvatar\NetAvatar.hpp">
       <Filter>Source Files\NetAvatar</Filter>
     </ClInclude>
-    <ClInclude Include="NetAvatar\logon\logon.h++">
+    <ClInclude Include="NetAvatar\logon\logon.hpp">
       <Filter>Source Files\NetAvatar\logon</Filter>
     </ClInclude>
-    <ClInclude Include="utils\binary\reader.h++">
+    <ClInclude Include="utils\binary\reader.hpp">
       <Filter>Source Files\Utils\Binary</Filter>
     </ClInclude>
-    <ClInclude Include="utils\binary\writer.h++">
+    <ClInclude Include="utils\binary\writer.hpp">
       <Filter>Source Files\Utils\Binary</Filter>
     </ClInclude>
-    <ClInclude Include="utils\text\text.h++">
+    <ClInclude Include="utils\text\text.hpp">
       <Filter>Source Files\Utils\Text</Filter>
     </ClInclude>
-    <ClInclude Include="utils\packet\update_packet.h++">
+    <ClInclude Include="utils\packet\update_packet.hpp">
       <Filter>Source Files\Utils\Packet</Filter>
     </ClInclude>
-    <ClInclude Include="utils\math\common.h++">
+    <ClInclude Include="utils\math\common.hpp">
       <Filter>Source Files\Utils\Math</Filter>
     </ClInclude>
-    <ClInclude Include="proton\text\text_scanner.h++">
+    <ClInclude Include="proton\text\text_scanner.hpp">
       <Filter>Source Files\Proton\Text</Filter>
     </ClInclude>
-    <ClInclude Include="events\events.h++">
+    <ClInclude Include="events\events.hpp">
       <Filter>Source Files\Events</Filter>
     </ClInclude>
-    <ClInclude Include="server\pool.h++">
+    <ClInclude Include="server\pool.hpp">
       <Filter>Source Files\server</Filter>
     </ClInclude>
-    <ClInclude Include="events\text\text_events.h++">
+    <ClInclude Include="events\text\text_events.hpp">
       <Filter>Source Files\Events\Text</Filter>
     </ClInclude>
-    <ClInclude Include="database\itemdb\items_info.h++">
+    <ClInclude Include="database\itemdb\items_info.hpp">
       <Filter>Source Files\Database\ItemDB</Filter>
     </ClInclude>
-    <ClInclude Include="database\itemdb\items_list.h++">
+    <ClInclude Include="database\itemdb\items_list.hpp">
       <Filter>Source Files\Database\ItemDB</Filter>
     </ClInclude>
-    <ClInclude Include="database\itemdb\itemdb.h++">
+    <ClInclude Include="database\itemdb\itemdb.hpp">
       <Filter>Source Files\Database\ItemDB</Filter>
     </ClInclude>
-    <ClInclude Include="events\action\actions.h++">
+    <ClInclude Include="events\action\actions.hpp">
       <Filter>Source Files\Events\Action</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c++">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="server\server.c++">
+    <ClCompile Include="server\server.cpp">
       <Filter>Source Files\server</Filter>
     </ClCompile>
-    <ClCompile Include="NetAvatar\NetAvatar.c++">
+    <ClCompile Include="NetAvatar\NetAvatar.cpp">
       <Filter>Source Files\NetAvatar</Filter>
     </ClCompile>
-    <ClCompile Include="events\events.c++">
+    <ClCompile Include="events\events.cpp">
       <Filter>Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="events\text\text_events.c++">
+    <ClCompile Include="events\text\text_events.cpp">
       <Filter>Source Files\Events\Text</Filter>
     </ClCompile>
-    <ClCompile Include="database\itemdb\itemdb.c++">
+    <ClCompile Include="database\itemdb\itemdb.cpp">
       <Filter>Source Files\Database\ItemDB</Filter>
     </ClCompile>
-    <ClCompile Include="events\action\actions.c++">
+    <ClCompile Include="events\action\actions.cpp">
       <Filter>Source Files\Events\Action</Filter>
     </ClCompile>
   </ItemGroup>

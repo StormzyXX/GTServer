@@ -1,9 +1,9 @@
-#include <server/server.h++>
+#include <server/server.hpp>
 #include <fmt/include/core.h>
-#include <NetAvatar/NetAvatar.h++>
-#include <proton/packet.h++>
-#include <utils/packet/update_packet.h++>
-#include <proton/text/text_scanner.h++>
+#include <NetAvatar/NetAvatar.hpp>
+#include <proton/packet.hpp>
+#include <utils/packet/update_packet.hpp>
+#include <proton/text/text_scanner.hpp>
 
 namespace svr
 {
@@ -102,8 +102,12 @@ namespace svr
                             }
                             std::string ev_function = str.substr(0, str.find('|'));
                             events::content cache{ NetClient, this, m_event_manager, &text };
-                            if (!m_event_manager->call({ ev_function, events::text_event::TEXT }, cache) || m_event_manager->call({ ev_function, events::text_event::ACTION }, cache)) {
-                                fmt::print("[{}]- Unhandled packet type {}: {}.\n", ev_function, tank_packet->type, str); //prints unhandled packets that client sends to server
+                            if (!m_event_manager->call({ ev_function, events::text_event::TEXT }, cache)) {
+                                fmt::print("[{}]- Unhandled packet type {}: {}.\n", NetClient->get_ip_address(), tank_packet->type, str); //prints unhandled packets that client sends to server
+                                break;
+                            }
+                            if (!m_event_manager->call({ ev_function, events::text_event::ACTION }, cache)) {
+                                fmt::print("[{}]- Unhandled packet type 2: {}.\n", NetClient->get_ip_address(), str); //prints unhandled actions sent to server
                                 break;
                             }
                             break;

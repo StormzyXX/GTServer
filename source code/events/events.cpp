@@ -1,8 +1,8 @@
-#include <events/events.h++>
+#include <events/events.hpp>
 #include <fmt/include/core.h>
-#include <utils/text/text.h++>
-#include <events/text/text_events.h++>
-#include <events/action/actions.h++>
+#include <utils/text/text.hpp>
+#include <events/text/text_events.hpp>
+#include <events/action/actions.hpp>
 
 
 namespace svr {
@@ -22,6 +22,7 @@ namespace svr {
     void events::load_events() 
     {
         this->register_event({ "requestedName", text_event::TEXT }, requested_name);
+        this->register_event({ "action", text_event::TEXT }, action);
         this->register_event({ "refresh_item_data", text_event::ACTION }, refresh_items);
     }
 

@@ -8,9 +8,9 @@
 #include <vector>
 #include <iomanip>
 #include <fmt/include/ranges.h>
-#include <proton/packet.h++>
-#include <utils/math/common.h++>
-#include <utils/binary/writer.h++>
+#include <proton/packet.hpp>
+#include <utils/math/common.hpp>
+#include <utils/binary/writer.hpp>
 
 namespace svr {
     enum class VariantType

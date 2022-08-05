@@ -10,16 +10,16 @@
 
 #include <json/json.hpp>
 
-#include <utils/math/common.h++>
+#include <utils/math/common.hpp>
 
-#include <constants/roles_manager.h++>
+#include <constants/roles_manager.hpp>
 
-#include <proton/packet.h++>
-#include <proton/variant.h++>
+#include <proton/packet.hpp>
+#include <proton/variant.hpp>
 
-#include <NetAvatar/logon/logon.h++>
+#include <NetAvatar/logon/logon.hpp>
 
-#include <server/server.h++>
+#include <server/server.hpp>
 
 namespace svr {
 	class ENetServer;
