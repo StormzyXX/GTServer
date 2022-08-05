@@ -24,6 +24,7 @@ namespace svr {
         this->register_event({ "requestedName", text_event::TEXT }, requested_name);
         this->register_event({ "action", text_event::TEXT }, action);
         this->register_event({ "refresh_item_data", text_event::ACTION }, refresh_items);
+        this->register_event({ "refresh_item_data", text_event::ACTION }, refresh_items); //not working, need to fix it
     }
 
     void events::register_event(const std::pair<std::string, text_event> data, std::function<void(events::content&)> fn)
