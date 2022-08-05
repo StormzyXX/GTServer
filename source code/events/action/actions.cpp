@@ -16,14 +16,13 @@ namespace svr {
                 return;
             }
         }
-        else {
-            return;
-        }
-        delete action_finder, actions;
+        return;
+        free(action_finder);
+        free(actions);
     }
     void refresh_items(events::content& content) {
         fmt::print("[{}]- Updating items request.", content.v_net->get_ip_address());
-        content.v_net->log_msg("One moment, updating item data (if logging for first time it would take few minutes)..."); //optional, you could change it to custom one if want :-)
+        content.v_net->log_msg("One moment, updating item data (might take few minutes)..."); //optional, you could change it to custom one if want :-)
         content.v_net->updatetankpacket(item_database::instance().get_packet(), item_database::instance().get_size());
     }
 }

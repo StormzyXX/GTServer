@@ -59,7 +59,7 @@ namespace svr
     {
         while (m_running.load()) 
         {
-            if (enet_host_service(m_host, &m_event, 1) < 1)
+            if (enet_host_service(m_host, &m_event, 1000) < 1)
                 continue;
             switch (m_event.type) 
             {
@@ -67,21 +67,17 @@ namespace svr
                 {
                      NetAvatar_t* NetClient = new NetAvatar_t(m_event.peer, this);
                      NetClient->updatetankpacket({ NET_MESSAGE_SERVER_HELLO }, sizeof(TankUpdatePacket));
-                     fmt::print("[{}]- Connecting attempt.\n", NetClient->get_ip_address());
                      break;
                 }
                 case ENET_EVENT_TYPE_DISCONNECT: {
                     NetAvatar_t* Disconnected_NetClient = static_cast<NetAvatar_t*>(m_event.peer->data);
                     if (!Disconnected_NetClient)
                         return;
-                   fmt::print("[{}]- Disconnecting attempt.\n", Disconnected_NetClient->get_ip_address());
+                    delete Disconnected_NetClient;
                     break;
                 }
                 case ENET_EVENT_TYPE_RECEIVE: 
                 {
-#ifdef _WIN32
-                    auto time_now = std::chrono::high_resolution_clock::now();
-#endif
                     if (!m_event.peer || !m_event.peer->data)
                         return;
                     if (m_event.packet->dataLength < sizeof(TankUpdatePacket::type) + 1 || m_event.packet->dataLength > 0x200)
@@ -106,10 +102,6 @@ namespace svr
                                 fmt::print("[{}]- Unhandled packet type {}: {}.\n", NetClient->get_ip_address(), tank_packet->type, str); //prints unhandled packets that client sends to server
                                 break;
                             }
-                            if (!m_event_manager->call({ ev_function, events::text_event::ACTION }, cache)) {
-                                fmt::print("[{}]- Unhandled packet type 2: {}.\n", NetClient->get_ip_address(), str); //prints unhandled actions sent to server
-                                break;
-                            }
                             break;
                         }
                         case NET_MESSAGE_GAME_PACKET:
@@ -117,13 +109,13 @@ namespace svr
                             GameUpdatePacket* update_packet = reinterpret_cast<GameUpdatePacket*>(tank_packet->data);
                             if (!update_packet)
                                 break;
+                            if (m_event.packet->dataLength < 56) {
+                                fmt::print("[{}]- Invalid packet (size is too small).\n", NetClient->get_ip_address()); //handles packets
+                                break;
+                            }
                             break;
                         }
                     }
-#ifdef _WIN32 
-                    auto end = std::chrono::high_resolution_clock::now() - time_now;
-                    fmt::print("event took {}ms/{}us to be sent.\n", std::chrono::duration_cast<std::chrono::milliseconds>(end).count(), std::chrono::duration_cast<std::chrono::microseconds>(end).count());
-#endif
                     enet_packet_destroy(m_event.packet);
                 }
                 case ENET_EVENT_TYPE_NONE:
