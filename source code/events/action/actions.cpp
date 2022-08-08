@@ -17,7 +17,6 @@ namespace svr {
             }
         }
         return;
-        free(action_finder);
         free(actions);
     }
     void refresh_items(events::content& content) {
