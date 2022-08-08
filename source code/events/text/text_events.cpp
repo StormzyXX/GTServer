@@ -33,10 +33,7 @@ namespace svr {
         }
         //endhere
         }
-        if (content.NetAvatar->m_requested_name.empty()) {
-            //todo: get random name from constants::random_names vector and set
-        }
-        if (content.NetAvatar->m_requested_name.length() < 3) {
+        if (content.NetAvatar->m_requested_name.empty() || content.NetAvatar->m_requested_name.length() < 3) {
             content.NetAvatar->log_msg("You'll need a name `$3 chars`` or longer to play online with. (select cancel and enter a longer name)");
             return;
         }
