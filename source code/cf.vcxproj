@@ -27,7 +27,6 @@
     <ClInclude Include="events\action\actions.hpp" />
     <ClInclude Include="events\events.hpp" />
     <ClInclude Include="events\text\text_events.hpp" />
-    <ClInclude Include="json.hpp" />
     <ClInclude Include="NetAvatar\logon\logon.hpp" />
     <ClInclude Include="NetAvatar\NetAvatar.hpp" />
     <ClInclude Include="proton\packet.hpp" />

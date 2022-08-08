@@ -18,7 +18,7 @@ namespace svr {
         };
 
         struct content {
-            NetAvatar_t* v_net;
+            NetAvatar_t* NetAvatar;
             ENetServer* g_server;
             events* g_event_svr;
             //TODO: database

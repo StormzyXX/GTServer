@@ -12,7 +12,7 @@ namespace svr {
         if (action_finder->try_get("action", action))
         {
             if (!actions->call({ action, events::text_event::ACTION }, content)) {
-                fmt::print("[{}]- Sent invalid action: {}.\n", content.v_net->get_ip_address(), action);
+                fmt::print("[{}]- Sent invalid action: {}.\n", content.NetAvatar->get_ip_address(), action);
                 return;
             }
         }
@@ -21,8 +21,8 @@ namespace svr {
         free(actions);
     }
     void refresh_items(events::content& content) {
-        fmt::print("[{}]- Updating items request.", content.v_net->get_ip_address());
-        content.v_net->log_msg("One moment, updating item data (might take few minutes)..."); //optional, you could change it to custom one if want :-)
-        content.v_net->updatetankpacket(item_database::instance().get_packet(), item_database::instance().get_size());
+        fmt::print("[{}]- Updating items request.", content.NetAvatar->get_ip_address());
+        content.NetAvatar->log_msg("`4One moment, updating item data...``"); //optional, you could change it to custom one if want :-)
+        content.NetAvatar->updatetankpacket(item_database::instance().get_packet(), item_database::instance().get_size());
     }
 }

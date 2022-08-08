@@ -8,8 +8,6 @@
 #include <fmt/include/ranges.h>
 #include <enet/include/enet.h>
 
-#include <json/json.hpp>
-
 #include <utils/math/common.hpp>
 
 #include <constants/roles_manager.hpp>
@@ -57,20 +55,20 @@ namespace svr {
 		void send_logon_attempt();
 	public:
 		int32_t m_platform_id = PLATFORM_ID_UNKNOWN;
-		void* m_logon;
+		void* m_logon = NULL;
 
 		std::atomic<bool> m_logged;
 
-		std::string m_ip_address;
+		std::string m_ip_address = "";
 
-		std::string m_requested_name;
+		std::string m_requested_name = "";
 	private:
 		ENetPeer* m_peer;
 
 		ENetServer* m_server;
 
 		uint32_t m_user_id = -1;
-		uint32_t m_net_id;
+		uint32_t m_net_id = -1;
 	};
 }
 #endif //! _NETAV_

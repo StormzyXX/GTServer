@@ -109,7 +109,7 @@ namespace svr {
 	void NetAvatar_t::send_logon_attempt() {
 		send_variant({
 	        "OnSuperMainStartAcceptLogonHrdxs47254722215a", item_database::instance().get_hash(),
-	        "www.growtopia1.com", "0099/01123/cache/", //CDN url & path goes there
+	        "www.growtopia1.com", "cache/", //CDN url & path goes there
 	        "www.growtopia1.com", "proto=47|clash_active=0|enableInventoryTab=0|bigBackpack=0|enable_tabs=0|", //don't change cuz its not neccessary
 	        0 //<-- replace 0 with tribute data's hash
 	    }, -1, 0);
