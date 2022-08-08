@@ -56,6 +56,12 @@
     <Filter Include="Source Files\Database\ItemDB">
       <UniqueIdentifier>{c1b32b90-5e3d-4318-b8c2-4b236978fc93}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Database\Tribute">
+      <UniqueIdentifier>{d7547a33-7c12-4384-b3c9-223a94c3d143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utils\Tools">
+      <UniqueIdentifier>{9ecb1b9e-52b6-44e3-86d2-74e7a7d606d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="server\server.hpp">
@@ -118,6 +124,12 @@
     <ClInclude Include="events\action\actions.hpp">
       <Filter>Source Files\Events\Action</Filter>
     </ClInclude>
+    <ClInclude Include="database\player_tribute\tribute_data.hpp">
+      <Filter>Source Files\Database\Tribute</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\tools\tools.hpp">
+      <Filter>Source Files\Utils\Tools</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -140,6 +152,9 @@
     </ClCompile>
     <ClCompile Include="events\action\actions.cpp">
       <Filter>Source Files\Events\Action</Filter>
+    </ClCompile>
+    <ClCompile Include="database\player_tribute\tribute_data.cpp">
+      <Filter>Source Files\Database\Tribute</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

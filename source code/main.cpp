@@ -26,6 +26,8 @@
 
 //items:
 #include <database/itemdb/itemdb.hpp>
+//tribute:
+#include <database/player_tribute/tribute_data.hpp>
 
 using namespace svr;
 pool* g_servers;
@@ -36,7 +38,6 @@ void exit_handler(int a)
 {
     for (auto& pair : g_servers->get_servers())
         g_servers->stop_instance(pair.first);
-    enet_deinitialize();
     exit(EXIT_SUCCESS);
 }
 
@@ -61,6 +62,11 @@ int main() {
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
+    fmt::print("initializing player tribute\n"); {
+        fmt::print("player tribute serialization -> {}.\n", player_tribute::init ? "succeed" : "failed");
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
 
     fmt::print("loading events...\n"); 
     {

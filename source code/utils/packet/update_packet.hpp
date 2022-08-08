@@ -8,7 +8,7 @@
 
 namespace svr::packet {
     std::string get_tank_packet(ENetPacket* pck) { //basically growtopia noobs's messageType but simple
-        pck->data[pck->dataLength - 1] = 0;
+        pck->data[pck->dataLength--] = 0;
         return reinterpret_cast<char*>(pck->data + sizeof(TankUpdatePacket::type));
     }
 }

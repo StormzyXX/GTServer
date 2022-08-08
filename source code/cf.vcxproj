@@ -24,6 +24,7 @@
     <ClInclude Include="database\itemdb\itemdb.hpp" />
     <ClInclude Include="database\itemdb\items_info.hpp" />
     <ClInclude Include="database\itemdb\items_list.hpp" />
+    <ClInclude Include="database\player_tribute\tribute_data.hpp" />
     <ClInclude Include="events\action\actions.hpp" />
     <ClInclude Include="events\events.hpp" />
     <ClInclude Include="events\text\text_events.hpp" />
@@ -39,9 +40,11 @@
     <ClInclude Include="utils\math\common.hpp" />
     <ClInclude Include="utils\packet\update_packet.hpp" />
     <ClInclude Include="utils\text\text.hpp" />
+    <ClInclude Include="utils\tools\tools.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="database\itemdb\itemdb.cpp" />
+    <ClCompile Include="database\player_tribute\tribute_data.cpp" />
     <ClCompile Include="events\action\actions.cpp" />
     <ClCompile Include="events\events.cpp" />
     <ClCompile Include="events\text\text_events.cpp" />

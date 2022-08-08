@@ -9,7 +9,7 @@ namespace svr
 	class bin_writer
 	{
 	public:
-		bin_writer(uint8_t* data, size_t pos = 0) : m_data(data) 
+		bin_writer(uint8_t* data, size_t pos = 0) : m_data(data) , m_pos(pos)
 		{
 			this->m_pos = pos;
 			this->m_delete_after = false;
@@ -82,10 +82,10 @@ namespace svr
 			return m_len;
 		}
 	private:
-		uint8_t* m_data;
+		uint8_t* m_data = nullptr;
 
-		size_t m_pos;
-		size_t m_len;
+		size_t m_pos = -1;
+		size_t m_len = 0;
 
 		bool m_delete_after{ true };
 	};

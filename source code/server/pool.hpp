@@ -48,7 +48,7 @@ namespace svr {
     private:
         std::string m_address{ "0.0.0.0" };
 
-        uint16_t m_port{ 17091 };
+        uint16_t m_port{ 69 };
         size_t m_max_peers{ 240 };
 
         int user_id{ 0 };

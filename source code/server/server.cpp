@@ -102,6 +102,9 @@ namespace svr
                                 fmt::print("[{}]- Unhandled packet type {}: {}.\n", NetClient->get_ip_address(), tank_packet->type, str); //prints unhandled packets that client sends to server
                                 break;
                             }
+                            if (!m_event_manager->call({ ev_function, events::text_event::ACTION }, cache)) {
+                                break;
+                            }
                             break;
                         }
                         case NET_MESSAGE_GAME_PACKET:
