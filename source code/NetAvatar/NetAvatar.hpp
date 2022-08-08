@@ -53,6 +53,9 @@ namespace svr {
 		void log_msg(const std::string& message_str);
 
 		void send_logon_attempt();
+
+		void send(const void* data, uintmax_t data_size, uint32_t flags);
+		void send(uint32_t type, const void* data, uintmax_t data_size, uint32_t flags);
 	public:
 		int32_t m_platform_id = PLATFORM_ID_UNKNOWN;
 		void* m_logon = NULL;

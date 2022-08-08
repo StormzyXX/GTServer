@@ -114,4 +114,30 @@ namespace svr {
 	        0 //<-- replace 0 with tribute data's hash
 	    }, -1, 0);
 	}
+
+	void NetAvatar_t::send(const void* data, uintmax_t data_size, uint32_t flags)
+	{
+		if (!m_peer)
+			return;
+		ENetPacket* packet = enet_packet_create(data, data_size, flags);
+		if (!packet)
+			return;
+		if (enet_peer_send(m_peer, 0, packet) != 0)
+			enet_packet_destroy(packet);
+	}
+
+	void NetAvatar_t::send(uint32_t type, const void* data, uintmax_t data_size, uint32_t flags)
+	{
+		if (!m_peer)
+			return;
+		ENetPacket* packet = enet_packet_create(nullptr, 5 + data_size, flags);
+		if (!packet)
+			return;
+		memcpy(packet->data, &type, 4);
+		packet->data[data_size + 4] = 0;
+		if (data)
+			memcpy(packet->data + 4, data, data_size);
+		if (enet_peer_send(m_peer, 0, packet) != 0)
+			enet_packet_destroy(packet);
+	}
 }

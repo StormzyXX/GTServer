@@ -51,7 +51,7 @@ namespace svr {
         //clearing memory...
         free(m_data);
         free(m_p_data);
-        fmt::print("done.\n");
+        fmt::print("player tribute serialization -> succeed.\n");
     }
 
     uint32_t player_tribute::interface__get_hash() const {
