@@ -47,10 +47,6 @@ namespace svr {
         reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->flags |= NET_GAME_PACKET_FLAGS_EXTENDED;
         reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->data_size = (uint32_t)data_size;
         memcpy(&reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->data, m_data, reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->data_size);
-
-        //clearing memory...
-        free(m_data);
-        free(m_p_data);
         fmt::print("player tribute serialization -> succeed.\n");
     }
 
