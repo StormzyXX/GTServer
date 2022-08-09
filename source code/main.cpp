@@ -57,7 +57,7 @@ int main() {
 
 
     fmt::print("initializing database\n"); {
-        fmt::print("items.dat serialization -> {}.\n", item_database::instance().init() ? "succeed" : "failed");
+        fmt::print("items.dat serialization -> {}.\n", item_database::instance().init() ? fmt::format("successed, hash: {}", item_database::instance().get_hash()) : "failed");
     }
 
     std::this_thread::sleep_for(std::chrono::milliseconds(100));

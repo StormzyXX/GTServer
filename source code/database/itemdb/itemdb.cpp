@@ -3,7 +3,7 @@
 #include <fstream>
 #include <fmt/include/core.h>
 #include <utils/binary/reader.hpp>
-
+#include <utils/tools/tools.hpp>
 namespace svr {
 
     item_database::~item_database()
@@ -28,6 +28,8 @@ namespace svr {
         bin_reader br(reinterpret_cast<uint8_t*>(m_data));
         m_version = br.read<uint16_t>();
         m_item_count = br.read<uint32_t>();
+
+        m_hash = utils::tools::hash(m_data, data_size);
 
         for (uint32_t i = 0; i < m_item_count; i++) {
             item item;

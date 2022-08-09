@@ -53,7 +53,7 @@ namespace svr
 
 				std::memcpy(m_data + m_pos, &len, len_size);
 				std::memcpy(m_data + m_pos + len_size, val.c_str(), len);
-				m_pos += len + len_size;
+				m_pos += (size_t)(len + len_size);
 				return;
 			}
 			uint32_t len = (uint32_t)val.length();

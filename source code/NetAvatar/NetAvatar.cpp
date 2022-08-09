@@ -1,6 +1,7 @@
 #include <NetAvatar/NetAvatar.hpp>
 #include <constants/constants.hpp>
 #include <database/itemdb/itemdb.hpp>
+#include <database/player_tribute/tribute_data.hpp>
 
 namespace svr {
 	uint32_t NetAvatar_t::get_user_id() const {
@@ -110,8 +111,8 @@ namespace svr {
 		send_variant({
 	        "OnSuperMainStartAcceptLogonHrdxs47254722215a", item_database::instance().get_hash(),
 	        "www.growtopia1.com", "cache/", //CDN url & path goes there
-	        "www.growtopia1.com", "proto=47|clash_active=0|enableInventoryTab=0|bigBackpack=0|enable_tabs=0|", //don't change cuz its not neccessary
-	        0 //<-- replace 0 with tribute data's hash
+	        "www.growtopia1.com", "proto=47|clash_active=1|enableInventoryTab=0|bigBackpack=0|enable_tabs=0|", //don't change cuz its not neccessary
+			player_tribute::get_hash() //<-- replace 0 with tribute data's hash
 	    }, -1, 0);
 	}
 

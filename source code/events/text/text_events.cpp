@@ -37,7 +37,6 @@ namespace svr {
             content.NetAvatar->log_msg("You'll need a name `$3 chars`` or longer to play online with. (select cancel and enter a longer name)");
             return;
         }
-        content.NetAvatar->log_msg(fmt::format("Welcome back, `w{}``.", content.NetAvatar->m_requested_name));
         content.NetAvatar->send_logon_attempt();
     }
 }

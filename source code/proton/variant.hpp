@@ -103,7 +103,7 @@ namespace svr {
 
             GameUpdatePacket* p = static_cast<GameUpdatePacket*>(malloc(size));
 
-            memset(p, 1, size);
+            memset(p, 0, size);
 
             uint8_t* extra = static_cast<uint8_t*>(&p->data);
             uint32_t pos = 1;

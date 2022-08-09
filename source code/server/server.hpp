@@ -26,19 +26,19 @@ namespace svr
         void start_service();
         void service();
     private:
-        uint8_t m_instanceId;
-        std::string m_address;
-        uint16_t m_port;
+        uint8_t m_instanceId = 1;
+        std::string m_address = "0.0.0.0";
+        uint16_t m_port = 17091;
 
-        ENetHost* m_host;
+        ENetHost* m_host = nullptr;
         ENetEvent m_event;
-        size_t m_max_peers;
+        size_t m_max_peers = 0;
         std::atomic<bool> m_running{ false };
         std::thread m_service;
 
         std::vector<ENetPeer*> m_peers{};
     private:
-        events* m_event_manager;
+        events* m_event_manager = NULL;
         //database* m_database;
     };
 }

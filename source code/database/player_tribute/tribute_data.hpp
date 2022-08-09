@@ -17,7 +17,6 @@ namespace svr {
 
         static uint32_t get_hash() { return get().interface__get_hash(); }
         static uint8_t* get_packet() { return get().interface__get_packet(); }
-        static uint32_t get_size() { return get().interface__get_size(); }
     private:
         player_tribute() = default;
         ~player_tribute();
@@ -26,7 +25,6 @@ namespace svr {
 
         uint32_t interface__get_hash() const;
         uint8_t* interface__get_packet();
-        uint32_t interface__get_size() const;
     private:
         uint32_t m_hash = 0;
         uint8_t* m_data = nullptr;

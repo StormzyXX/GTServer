@@ -1,13 +1,13 @@
-#ifndef _TOOLS_
-#define _TOOLS_
+#ifndef _TOOLS2_
+#define _TOOLS2_
 
 #include <cctype>
 #include <regex>
 #include <string_view>
 
-namespace utils::tools {
+namespace utils::tools2 {
     std::string cypher(const std::string& input, uint32_t id) {
-        if (input.empty()) 
+        if (input.empty())
             return "";
         constexpr std::string_view secret = "PBG892FXX982ABC*";
         std::string return_value(input.size(), 0);
@@ -17,7 +17,7 @@ namespace utils::tools {
         return return_value;
     }
     uint32_t hash(const void* data, uintmax_t data_len) {
-        if (!data) 
+        if (!data)
             return 0;
         uint32_t hash = 0x55555555;
 
@@ -27,4 +27,4 @@ namespace utils::tools {
         return hash;
     }
 }
-#endif //! _TOOLS_
+#endif //! _TOOLS2_
