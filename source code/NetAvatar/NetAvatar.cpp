@@ -92,7 +92,7 @@ namespace svr {
 	std::string NetAvatar_t::get_device_name(const uint32_t& platform_id) {
 		switch (platform_id)
 		{
-         	case PLATFORM_ID_UNKNOWN: return "unknown";
+	        case PLATFORM_ID_UNKNOWN: return "???";
 	        case PLATFORM_ID_WINDOWS: return "windows";
          	case PLATFORM_ID_IOS: return "iphone";
                	case PLATFORM_ID_OSX: return "osx";
