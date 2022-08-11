@@ -13,11 +13,12 @@
 namespace svr
 {
     class events;
+    class database;
     class ENetServer {
     public:
         ENetServer(const uint8_t& instanceId, const std::string& address, const uint16_t& port, const size_t& max_peers);
         ~ENetServer();
-        void set_component(events* ev);
+        void set_component(events* ev, database* db);
 
         std::pair<std::string, uint16_t> get_host();
         bool start();
@@ -30,16 +31,16 @@ namespace svr
         std::string m_address = "0.0.0.0";
         uint16_t m_port = 17091;
 
-        ENetHost* m_host = nullptr;
+        ENetHost* m_host;
         ENetEvent m_event;
         size_t m_max_peers = 0;
         std::atomic<bool> m_running{ false };
-        std::thread m_service;
+        std::thread m_service{};
 
-        std::vector<ENetPeer*> m_peers{};
+        std::vector<ENetPeer*> m_peers;
     private:
-        events* m_event_manager = NULL;
-        //database* m_database;
+        events* m_event_manager;
+        database* m_database;
     };
 }
 #endif // !SERVICE_

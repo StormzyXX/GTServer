@@ -27,7 +27,7 @@ namespace svr
         bool interface__init();
     private:
         uint32_t m_hash = 0;
-        char* m_data = 0;
+        char* m_data{};
         size_t m_data_size = 0;
 
         uint32_t m_item_count = 0;
@@ -35,7 +35,7 @@ namespace svr
 
         TankUpdatePacket* m_packet;
     private:
-        std::vector<item> m_items;
+        std::vector<item> m_items{};
     };
 }
 

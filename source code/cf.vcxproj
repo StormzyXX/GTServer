@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="constants\constants.hpp" />
     <ClInclude Include="constants\roles_manager.hpp" />
+    <ClInclude Include="database\database.hpp" />
     <ClInclude Include="database\itemdb\itemdb.hpp" />
     <ClInclude Include="database\itemdb\items_info.hpp" />
     <ClInclude Include="database\itemdb\items_list.hpp" />
@@ -38,9 +39,12 @@
     <ClInclude Include="utils\binary\reader.hpp" />
     <ClInclude Include="utils\binary\writer.hpp" />
     <ClInclude Include="utils\math\common.hpp" />
+    <ClInclude Include="utils\mysql\mysql_result.hpp" />
     <ClInclude Include="utils\packet\update_packet.hpp" />
     <ClInclude Include="utils\text\text.hpp" />
+    <ClInclude Include="utils\text\text2.hpp" />
     <ClInclude Include="utils\tools\tools.hpp" />
+    <ClInclude Include="utils\tools\tools2.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="database\itemdb\itemdb.cpp" />
@@ -152,13 +156,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory);$(MSBuildProjectDirectory)\vendor\;$(MSBuildProjectDirectory)\vendor;$(MSBuildProjectDirectory)\vendor\mysql-8.0\include\jdbc;$(MSBuildProjectDirectory)\vendor\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(MSBuildProjectDirectory);$(MSBuildProjectDirectory)\vendor\;$(MSBuildProjectDirectory)\vendor;$(MSBuildProjectDirectory)\vendor\mysql\include;$(MSBuildProjectDirectory)\vendor\sfml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\vendor\enet\library;$(MSBuildProjectDirectory)\vendor\fmt\library;$(MSBuildProjectDirectory)\vendor\mysql-8.0\lib64\vs14;$(MSBuildProjectDirectory)\vendor\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>enet64.lib;fmtd.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;libcrypto.lib;libssl.lib;mysqlcppconn.lib;mysqlcppconn-static.lib;mysqlcppconn8.lib;mysqlcppconn8-static.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(MSBuildProjectDirectory)\vendor\enet\library;$(MSBuildProjectDirectory)\vendor\fmt\library;$(MSBuildProjectDirectory)\vendor\mysql\lib;$(MSBuildProjectDirectory)\vendor\sfml\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>enet64.lib;fmtd.lib;winmm.lib;ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;sfml-system-d.lib;sfml-window-d.lib;sfml-graphics-d.lib;libmysql.lib;mysqlclient.lib;mysqlcppconn.lib;mysqlcppconn-static.lib;mysqlservices.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

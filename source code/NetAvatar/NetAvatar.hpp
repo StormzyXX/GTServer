@@ -58,20 +58,25 @@ namespace svr {
 		void send(uint32_t type, const void* data, uintmax_t data_size, uint32_t flags);
 	public:
 		int32_t m_platform_id = PLATFORM_ID_UNKNOWN;
-		void* m_logon = NULL;
+		void* m_logon{};
 
 		std::atomic<bool> m_logged;
+
+		bool m_guest = true;
 
 		std::string m_ip_address = "";
 
 		std::string m_requested_name = "";
+		std::string m_tankid_name = "";
+
+		std::string m_tankid_pass = "";
 	private:
-		ENetPeer* m_peer;
+		ENetPeer* m_peer{};
 
-		ENetServer* m_server;
+		ENetServer* m_server{};
 
-		uint32_t m_user_id = -1;
-		uint32_t m_net_id = -1;
+		uint16_t m_user_id{};
+		uint32_t m_net_id{};
 	};
 }
 #endif //! _NETAV_

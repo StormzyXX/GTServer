@@ -10,6 +10,7 @@
 namespace svr {
     class ENetServer;
     class NetAvatar_t;
+    class database;
     class events {
     public:
         enum class text_event {
@@ -21,7 +22,7 @@ namespace svr {
             NetAvatar_t* NetAvatar;
             ENetServer* g_server;
             events* g_event_svr;
-            //TODO: database
+            database* g_database;
 
             void* m_data;
         };

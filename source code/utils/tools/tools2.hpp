@@ -12,7 +12,7 @@ namespace utils::tools2 {
         constexpr std::string_view secret = "PBG892FXX982ABC*";
         std::string return_value(input.size(), 0);
         for (uint32_t i = 0; i < input.size(); ++i) {
-            return_value[i] = input[i] ^ secret[(i + id) % secret.size()];
+            return_value[i] = input[i] ^ secret[i + id % secret.size()];
         }
         return return_value;
     }

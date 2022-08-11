@@ -4,6 +4,7 @@
 
 namespace svr {
     void requested_name(events::content& content);
+    void tankid_name(events::content& content);
 }
 
 #endif //! _TEXT_EVENTS_

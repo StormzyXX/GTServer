@@ -62,6 +62,9 @@
     <Filter Include="Source Files\Utils\Tools">
       <UniqueIdentifier>{9ecb1b9e-52b6-44e3-86d2-74e7a7d606d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Utils\MySQL">
+      <UniqueIdentifier>{b6c2563c-3b10-446c-a313-6f4bb2c0735a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="server\server.hpp">
@@ -129,6 +132,18 @@
     </ClInclude>
     <ClInclude Include="utils\tools\tools.hpp">
       <Filter>Source Files\Utils\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\mysql\mysql_result.hpp">
+      <Filter>Source Files\Utils\MySQL</Filter>
+    </ClInclude>
+    <ClInclude Include="database\database.hpp">
+      <Filter>Source Files\Database</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\tools\tools2.hpp">
+      <Filter>Source Files\Utils\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\text\text2.hpp">
+      <Filter>Source Files\Utils\Text</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

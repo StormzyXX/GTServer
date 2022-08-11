@@ -105,7 +105,7 @@ namespace svr {
 
             memset(p, 0, size);
 
-            uint8_t* extra = static_cast<uint8_t*>(&p->data);
+            uint8_t* extra = (uint8_t*)p->data;
             uint32_t pos = 1;
             uint8_t cnt = 0;
 
@@ -178,18 +178,18 @@ namespace svr {
                 cnt = i;
             }
 
-            extra[0] = cnt + 1;
+            extra[0] = cnt++;
 
-            p->type = 1;
+            p->type = NET_GAME_PACKET_CALL_FUNCTION;
             p->net_id = -1;
-            p->flags |= 0x8;
+            p->flags |= NET_GAME_PACKET_FLAGS_EXTENDED;
             p->data_size = pos;
 
             return p;
         }
 
     private:
-        std::vector<variant> m_variants;
+        std::vector<variant> m_variants{};
     };
 }
 

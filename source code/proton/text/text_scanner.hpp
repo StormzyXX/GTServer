@@ -104,7 +104,7 @@ namespace svr
 		}
 
 	private:
-		std::unordered_map<std::string, std::string> m_data;
+		std::unordered_map<std::string, std::string> m_data{};
 	};
 }
 

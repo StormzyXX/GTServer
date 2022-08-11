@@ -62,9 +62,9 @@ namespace svr
 			this->m_pos += len;
 		}
 	private:
-		uint8_t* m_data = nullptr;
+		uint8_t* m_data{};
 
-		uint32_t m_pos = -1;
+		uint32_t m_pos = 0;
 	};
 };
 #endif //! _BIN_READER_

@@ -27,8 +27,8 @@ namespace svr {
         uint8_t* interface__get_packet();
     private:
         uint32_t m_hash = 0;
-        uint8_t* m_data = nullptr;
-        uint8_t* m_p_data = nullptr;
+        uint8_t* m_data{};
+        uint8_t* m_p_data{};
     };
 }
 

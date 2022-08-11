@@ -16,9 +16,9 @@ namespace svr
             return;
         delete m_host;
     }
-    void ENetServer::set_component(events* ev) {
+    void ENetServer::set_component(events* ev, database* db) {
         this->m_event_manager = ev;
-        //this->m_database = db;
+        this->m_database = db;
     }
 
     std::pair<std::string, uint16_t> ENetServer::get_host() 
@@ -38,7 +38,7 @@ namespace svr
 
         m_host->checksum = enet_crc32;
         enet_host_compress_with_range_coder(m_host);
-        fmt::print("starting server: {}, {}:{}.\n", 1, m_address, m_port);
+        fmt::print("starting server: {}, {}:{}.\n", m_instanceId, m_address, m_port);
         m_running.store(true);
         return true;
     }
@@ -59,7 +59,7 @@ namespace svr
     {
         while (m_running.load()) 
         {
-            if (enet_host_service(m_host, &m_event, 1000) < 1)
+            if (enet_host_service(m_host, &m_event, 1000) < 1) //idk to change or no LUL
                 continue;
             switch (m_event.type) 
             {
@@ -97,7 +97,7 @@ namespace svr
                                 return;
                             }
                             std::string ev_function = str.substr(0, str.find('|'));
-                            events::content cache{ NetClient, this, m_event_manager, &text };
+                            events::content cache{ NetClient, this, m_event_manager, m_database, &text};
                             if (!m_event_manager->call({ ev_function, events::text_event::TEXT }, cache)) {
                                 fmt::print("[{}]- Unhandled packet type {}: {}.\n", NetClient->get_ip_address(), tank_packet->type, str); //prints unhandled packets that client sends to server
                                 break;

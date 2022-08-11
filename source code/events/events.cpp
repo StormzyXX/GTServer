@@ -26,6 +26,7 @@ namespace svr {
         this->register_event({ "refresh_item_data", text_event::ACTION }, refresh_items);
         this->register_event({ "refresh_player_tribute_data", text_event::ACTION }, refresh_tribute);
         this->register_event({ "enter_game", text_event::ACTION }, enter_game);
+        this->register_event({ "tankIDName", text_event::TEXT }, tankid_name);
     }
 
     void events::register_event(const std::pair<std::string, text_event> data, std::function<void(events::content&)> fn)

@@ -24,6 +24,9 @@
 #include <server/server.hpp>
 #include <server/pool.hpp>
 
+//database:
+#include <database/database.hpp>
+
 //items:
 #include <database/itemdb/itemdb.hpp>
 //tribute:
@@ -33,6 +36,7 @@ using namespace svr;
 pool* g_servers;
 events* g_event_manager;
 std::vector<std::thread*> g_threads;
+database* g_database;
 
 void exit_handler(int a) 
 {
@@ -48,25 +52,31 @@ int main() {
     {
         if (enet_initialize() != 0) {
             fmt::print("failed to bind ENet.\n");
-            return EXIT_FAILURE;
+            system("pause");
         }
         g_servers = new pool();
         fmt::print("server pool started!\n");
     }
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
+    fmt::print("initializing database...\n"); {
+        g_database->init();
+        fmt::print("server data -> {}.\n", g_database->serialize_server_data(g_servers) ? fmt::format("successed, players: {}", g_servers->get_user_id()) : "failed");
+    }
 
-    fmt::print("initializing database\n"); {
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+
+    fmt::print("initializing items.dat...\n"); {
         fmt::print("items.dat serialization -> {}.\n", item_database::instance().init() ? fmt::format("successed, hash: {}", item_database::instance().get_hash()) : "failed");
     }
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
-    fmt::print("initializing player tribute\n"); {
+    fmt::print("initializing player tribute...\n"); {
         player_tribute::init();
     }
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
     fmt::print("loading events...\n"); 
     {
@@ -75,7 +85,7 @@ int main() {
         fmt::print("events pushes!\n");
     }
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 
 
     fmt::print("binding server...\n"); 
@@ -83,9 +93,9 @@ int main() {
         ENetServer* server = new ENetServer(1, "127.0.0.1", 69, 240);
         if (!server->start()) {
             fmt::print("failed to bind enet server -> {}:{}.\n", server->get_host().first, server->get_host().second);
-            return EXIT_FAILURE;
+            system("pause");
         }
-        server->set_component(g_event_manager);
+        server->set_component(g_event_manager, g_database);
 
         for (const auto& thread : g_threads)
             thread->detach();

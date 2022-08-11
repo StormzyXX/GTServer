@@ -82,9 +82,9 @@ namespace svr
 			return m_len;
 		}
 	private:
-		uint8_t* m_data = nullptr;
+		uint8_t* m_data{};
 
-		size_t m_pos = -1;
+		size_t m_pos = 0;
 		size_t m_len = 0;
 
 		bool m_delete_after{ true };

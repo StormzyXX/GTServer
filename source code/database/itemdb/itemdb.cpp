@@ -99,13 +99,13 @@ namespace svr {
 
         m_packet = static_cast<TankUpdatePacket*>(std::malloc(sizeof(TankUpdatePacket) + sizeof(GameUpdatePacket) + data_size));
         std::memset(m_packet, 0, sizeof(TankUpdatePacket) + sizeof(GameUpdatePacket) + data_size);
-        m_packet->type = NET_MESSAGE_GAME_PACKET;
-        m_packet->data = static_cast<char*>(std::malloc(sizeof(GameUpdatePacket) + data_size));
+        m_packet->type = (uint8_t)NET_MESSAGE_GAME_PACKET;
+        m_packet->data = (char*)static_cast<char*>(std::malloc(sizeof(GameUpdatePacket) + data_size));
 
         GameUpdatePacket* update_packet = reinterpret_cast<GameUpdatePacket*>(m_packet->data);
-        update_packet->type = NET_GAME_PACKET_SEND_ITEM_DATABASE_DATA;
+        update_packet->type = (uint8_t)NET_GAME_PACKET_SEND_ITEM_DATABASE_DATA;
         update_packet->net_id = -1;
-        update_packet->flags |= NET_GAME_PACKET_FLAGS_EXTENDED;
+        update_packet->flags |= (uint32_t)NET_GAME_PACKET_FLAGS_EXTENDED;
         update_packet->data_size = (uint32_t)data_size;
         std::memcpy(&update_packet->data, m_data, data_size);
         std::memcpy(&m_packet->data, update_packet, sizeof(GameUpdatePacket) + data_size);

@@ -17,17 +17,17 @@ namespace svr {
         std::string epic_players = "Thawne ; Rebillion \n\n";
         std::string exceptional_mentors = "No players are this amazing yet! Could you be the first? \n\n";
 
-        int data_size = (int)epic_players.length() + exceptional_mentors.length();
+        int data_size = (int)epic_players.length() + (int)exceptional_mentors.length();
         m_data = static_cast<uint8_t*>(malloc((size_t)data_size));
         uint16_t pos = 0;
 
-        uint16_t epic_players_len = static_cast<uint16_t>(epic_players.length());
+        uint16_t epic_players_len = static_cast<uint16_t>((uint16_t)epic_players.length());
         memcpy(m_data, &epic_players_len, 2);
         pos += 2;
         memcpy(m_data + pos, epic_players.c_str(), epic_players_len);
         pos += epic_players_len;
 
-        uint16_t exceptional_mentors_len = static_cast<uint16_t>(exceptional_mentors.length());
+        uint16_t exceptional_mentors_len = static_cast<uint16_t>((uint16_t)exceptional_mentors.length());
         memcpy(m_data + pos, &exceptional_mentors_len, 2);
         pos += 2;
         memcpy(m_data + pos, exceptional_mentors.c_str(), exceptional_mentors_len);
@@ -47,7 +47,7 @@ namespace svr {
         reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->flags |= NET_GAME_PACKET_FLAGS_EXTENDED;
         reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->data_size = (uint32_t)data_size;
         memcpy(&reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->data, m_data, reinterpret_cast<GameUpdatePacket*>(m_p_data + 4)->data_size);
-        fmt::print("tribute data serialization -> {}.\n", player_tribute::init ? fmt::format("successed, hash: {}", m_hash) : "failed");
+        fmt::print("tribute data serialization -> successed, hash: {}.\n", m_hash);
     }
 
     uint32_t player_tribute::interface__get_hash() const {
