@@ -12,25 +12,30 @@ namespace svr
     }
     ENetServer::~ENetServer() 
     {
-        if (!this->stop())
-            return;
-        delete m_host;
+       for (auto& peer : m_peers)
+       enet_peer_disconnect_later(peer, 0U);
+       return EXIT_FAILURE; 
     }
     void ENetServer::set_component(events* ev, database* db) {
         this->m_event_manager = ev;
         this->m_database = db;
     }
 
-    std::pair<std::string, uint16_t> ENetServer::get_host() 
+    std::string ENetServer::get_host() 
     {
-        return { m_address, m_port };
+       if (!m_host) 
+		   return {};
+
+	char ipString[16];
+	enet_address_get_host_ip(&m_host->m_address, ipString, sizeof ipString);
+	    return ipStr;
+        return this->m_host->address.port;
     }
     bool ENetServer::start() 
     {
         ENetAddress address;
-
-        enet_address_set_host(&address, m_address.c_str());
         address.port = m_port;
+        enet_address_set_host(&address, m_address.c_str());
 
         m_host = enet_host_create(&address, m_max_peers, 2, 0, 0);
         if (!m_host)
@@ -40,15 +45,10 @@ namespace svr
         enet_host_compress_with_range_coder(m_host);
         fmt::print("starting server: {}, {}:{}.\n", m_instanceId, m_address, m_port);
         m_running.store(true);
+        
         return true;
     }
-    bool ENetServer::stop() 
-    {
-        for (auto& peer : m_peers)
-            enet_peer_disconnect_later(peer, 0U);
-        m_running.store(false);
-        return true;
-    }
+
 
     void ENetServer::start_service() 
     {
@@ -59,7 +59,7 @@ namespace svr
     {
         while (m_running.load()) 
         {
-            if (enet_host_service(m_host, &m_event, 1000) < 1) //idk to change or no LUL
+            if (enet_host_service(m_host, &m_event, 100) // 100ms timeout
                 continue;
             switch (m_event.type) 
             {
