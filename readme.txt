@@ -15,4 +15,4 @@ setup:
 ~ Put items.dat file in ’utils’ dirrectory
 ~ Run server, enjoy :)
 
-for further questions message Eobard Thawne#0084 :-)
+for further questions message Stormzy#0084 :-)
