@@ -92,19 +92,19 @@ namespace svr {
 	std::string NetAvatar_t::get_device_name(const uint32_t& platform_id) {
 		switch (platform_id)
 		{
-		     case PLATFORM_ID_ANDROID: return "Android"; break;
-			 case PLATFORM_ID_BBX: return "BBX"; break;
-			 case PLATFORM_ID_FLASH: return "Flash"; break;
-			 case PLATFORM_ID_HTML5: return "HTML5"; break;
-			 case PLATFORM_ID_IOS: return "Apple IOS"; break;
-			 case PLATFORM_ID_LINUX: return "Linux"; break;
-			 case PLATFORM_ID_OSX: return "OSX (Mac)"; break;
-			 case PLATFORM_ID_WEBOS: return "Web OS"; break;
-			 case PLATFORM_ID_WINDOWS: return "Windows"; break;
-			 case PLATFORM_ID_WINDOWS_MOBILE: return "Windows Mobile"; break;
-			 default: return "Unknown"; break;
+	        case PLATFORM_ID_UNKNOWN: return "???";
+	        case PLATFORM_ID_WINDOWS: return "windows";
+         	case PLATFORM_ID_IOS: return "iphone";
+               	case PLATFORM_ID_OSX: return "osx";
+              	case PLATFORM_ID_LINUX: return "linux";
+	        case PLATFORM_ID_ANDROID: return "android";
+	        case PLATFORM_ID_WINDOWS_MOBILE: return "winmo";
+	        case PLATFORM_ID_WEBOS: return "webos";
+	        case PLATFORM_ID_BBX: return "bbx";
+               default:;
 		}
-		return "Unknown";
+		
+	       return "";
 	}
 
 	void NetAvatar_t::send_logon_attempt() {
